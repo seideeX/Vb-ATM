@@ -79,14 +79,5 @@ Public Class TransactionHistory
         End If
     End Sub
 
-    Private Sub TransactionFormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        Dim result As New DialogResult
-        result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        If result = DialogResult.No Then
-            e.Cancel = True
-        Else
-            Application.ExitThread()
-        End If
-    End Sub
 End Class

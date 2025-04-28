@@ -52,15 +52,13 @@ Public Class Form1
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Dim transactions As New TransactionHistory(loggedInUserId)
-        Me.Hide()
-        transactions.Show()
+        transactions.ShowDialog()
 
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim editAccount As New EditAccount(loggedInUserId)
-        Me.Hide()
-        editAccount.Show()
+        editAccount.ShowDialog()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

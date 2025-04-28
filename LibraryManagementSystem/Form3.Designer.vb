@@ -23,9 +23,10 @@ Partial Class EditAccount
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         GroupBox1 = New GroupBox()
+        txt_acctype = New TextBox()
         Label8 = New Label()
         Button2 = New Button()
-        btnRegister = New Button()
+        btnUpdate = New Button()
         Label7 = New Label()
         txt_address = New TextBox()
         Label6 = New Label()
@@ -44,7 +45,6 @@ Partial Class EditAccount
         txt_firstname = New TextBox()
         txt_middlename = New TextBox()
         txt_lastname = New TextBox()
-        txt_acctype = New TextBox()
         GroupBox1.SuspendLayout()
         gp_sex.SuspendLayout()
         SuspendLayout()
@@ -54,7 +54,7 @@ Partial Class EditAccount
         GroupBox1.Controls.Add(txt_acctype)
         GroupBox1.Controls.Add(Label8)
         GroupBox1.Controls.Add(Button2)
-        GroupBox1.Controls.Add(btnRegister)
+        GroupBox1.Controls.Add(btnUpdate)
         GroupBox1.Controls.Add(Label7)
         GroupBox1.Controls.Add(txt_address)
         GroupBox1.Controls.Add(Label6)
@@ -77,6 +77,14 @@ Partial Class EditAccount
         GroupBox1.TabStop = False
         GroupBox1.Text = "Personal Details"
         ' 
+        ' txt_acctype
+        ' 
+        txt_acctype.Location = New Point(346, 223)
+        txt_acctype.Name = "txt_acctype"
+        txt_acctype.ReadOnly = True
+        txt_acctype.Size = New Size(150, 23)
+        txt_acctype.TabIndex = 21
+        ' 
         ' Label8
         ' 
         Label8.AutoSize = True
@@ -96,15 +104,15 @@ Partial Class EditAccount
         Button2.Text = "Cancel"
         Button2.UseVisualStyleBackColor = True
         ' 
-        ' btnRegister
+        ' btnUpdate
         ' 
-        btnRegister.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
-        btnRegister.Location = New Point(502, 160)
-        btnRegister.Name = "btnRegister"
-        btnRegister.Size = New Size(134, 40)
-        btnRegister.TabIndex = 17
-        btnRegister.Text = "Save"
-        btnRegister.UseVisualStyleBackColor = True
+        btnUpdate.Font = New Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point)
+        btnUpdate.Location = New Point(502, 160)
+        btnUpdate.Name = "btnUpdate"
+        btnUpdate.Size = New Size(134, 40)
+        btnUpdate.TabIndex = 17
+        btnUpdate.Text = "Save"
+        btnUpdate.UseVisualStyleBackColor = True
         ' 
         ' Label7
         ' 
@@ -264,14 +272,6 @@ Partial Class EditAccount
         txt_lastname.Size = New Size(158, 23)
         txt_lastname.TabIndex = 0
         ' 
-        ' txt_acctype
-        ' 
-        txt_acctype.Location = New Point(346, 223)
-        txt_acctype.Name = "txt_acctype"
-        txt_acctype.ReadOnly = True
-        txt_acctype.Size = New Size(150, 23)
-        txt_acctype.TabIndex = 21
-        ' 
         ' EditAccount
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -290,7 +290,7 @@ Partial Class EditAccount
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Button2 As Button
-    Friend WithEvents btnRegister As Button
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents txt_address As TextBox
     Friend WithEvents Label6 As Label

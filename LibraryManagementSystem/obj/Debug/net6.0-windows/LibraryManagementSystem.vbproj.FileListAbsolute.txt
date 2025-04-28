@@ -25,3 +25,4 @@ C:\Users\Admin\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\
 C:\Users\Admin\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net6.0-windows\LibraryManagementSystem.EditAccount.resources
 C:\Users\Admin\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net6.0-windows\LibraryManagementSystem.Deposit.resources
 C:\Users\Admin\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net6.0-windows\LibraryManagementSystem.Withdraw.resources
+C:\Users\Admin\source\repos\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\net6.0-windows\LibraryManagementSystem.AdminDashboard.resources

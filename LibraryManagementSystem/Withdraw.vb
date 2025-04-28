@@ -76,4 +76,15 @@ Public Class Withdraw
             MessageBox.Show("Amount is greater then you current balance", "Unsuccessful", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
+    Private Sub WithdrawClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim result As New DialogResult
+        result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim userDashboard As New Form1(loggedInUserId)
+        If result = DialogResult.No Then
+            e.Cancel = True
+        Else
+            userDashboard.Show()
+        End If
+    End Sub
 End Class

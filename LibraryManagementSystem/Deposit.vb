@@ -81,11 +81,11 @@ Public Class Deposit
     Private Sub deposit_formclosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim result As New DialogResult
         result = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-
+        Dim userDashboard As New Form1(loggedInUserId)
         If result = DialogResult.No Then
             e.Cancel = True
         Else
-            Application.ExitThread()
+            userDashboard.Show()
         End If
     End Sub
 
