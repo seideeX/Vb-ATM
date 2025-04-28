@@ -79,7 +79,6 @@ Public Class AdminDashboard
         If e.RowIndex >= 0 Then
             If DataGridView1.Columns(e.ColumnIndex).Name = "Edit" Then
                 Dim accountId As Integer = Convert.ToInt32(DataGridView1.Rows(e.RowIndex).Cells("account_id").Value)
-                MessageBox.Show("Edit This Shit " & accountId)
 
                 Dim editAccountDetails As New EditAccount(accountId)
                 editAccountDetails.ShowDialog()
@@ -90,7 +89,21 @@ Public Class AdminDashboard
 
             ElseIf DataGridView1.Columns(e.ColumnIndex).Name = "Delete" Then
                 Dim accountId As Integer = Convert.ToInt32(DataGridView1.Rows(e.RowIndex).Cells("account_id").Value)
-                MessageBox.Show("Delete This Shit " & accountId)
+                Dim result As New DialogResult
+                result = MessageBox.Show("Are you sure you want to delete this?", "Confirm Deletion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Exclamation)
+
+                If result = DialogResult.Yes Then
+                    Dim query As String = "DELETE o FROM owners o INNER JOIN accounts a ON o.owner_id = a.owner_id WHERE a.account_id = @acc_id;"
+                    Dim cmd As New MySqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@acc_id", accountId)
+                    conn.Open()
+
+                    cmd.ExecuteNonQuery()
+                    conn.Close()
+                    MessageBox.Show("Record Deleted Succussfully!")
+                    BindData()
+                    AddColumnButtons()
+                End If
             End If
         End If
     End Sub
